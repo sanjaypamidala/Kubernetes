@@ -1,0 +1,897 @@
+Microsoft Windows [Version 10.0.19045.3930]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\The Rebel>gcloud container clusters get-credentials myk8scluster-1 --zone us-central1-c --project feisty-truth-413203
+Fetching cluster endpoint and auth data.
+kubeconfig entry generated for myk8scluster-1.
+
+
+Updates are available for some Google Cloud CLI components.  To install them,
+please run:
+  $ gcloud components update
+
+
+C:\Users\The Rebel>kubectl get pods
+No resources found in default namespace.
+
+C:\Users\The Rebel>kubectl get nodes
+NAME                                            STATUS   ROLES    AGE    VERSION
+gke-myk8scluster-1-default-pool-ccb83c90-g1dw   Ready    <none>   2d1h   v1.27.8-gke.1067004
+gke-myk8scluster-1-default-pool-ccb83c90-vwr3   Ready    <none>   2d1h   v1.27.8-gke.1067004
+
+C:\Users\The Rebel>kubectl get services
+NAME         TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
+kubernetes   ClusterIP   10.104.0.1   <none>        443/TCP   2d1h
+
+C:\Users\The Rebel>kubectl get nodes -o wide
+NAME                                            STATUS   ROLES    AGE    VERSION               INTERNAL-IP   EXTERNAL-IP       OS-IMAGE                             KERNEL-VERSION   CONTAINER-RUNTIME
+gke-myk8scluster-1-default-pool-ccb83c90-g1dw   Ready    <none>   2d1h   v1.27.8-gke.1067004   10.128.0.7    104.154.216.202   Container-Optimized OS from Google   5.15.133+        containerd://1.7.10
+gke-myk8scluster-1-default-pool-ccb83c90-vwr3   Ready    <none>   2d1h   v1.27.8-gke.1067004   10.128.0.6    34.122.156.116    Container-Optimized OS from Google   5.15.133+        containerd://1.7.10
+
+C:\Users\The Rebel>kubectl get pods -o wide
+No resources found in default namespace.
+
+C:\Users\The Rebel>code .
+'code' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\The Rebel>mkdir components
+
+C:\Users\The Rebel>ls
+'ls' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\The Rebel>cd kubernetes
+The system cannot find the path specified.
+
+C:\Users\The Rebel>kubectl get pods
+No resources found in default namespace.
+
+C:\Users\The Rebel>kubectl get deployments
+No resources found in default namespace.
+
+C:\Users\The Rebel>kubectl get replicasets
+No resources found in default namespace.
+
+C:\Users\The Rebel>ls
+'ls' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\The Rebel>cd \
+
+C:\>cd kubernetes
+The system cannot find the path specified.
+
+C:\>kubectl get nodes
+NAME                                            STATUS   ROLES    AGE    VERSION
+gke-myk8scluster-1-default-pool-ccb83c90-g1dw   Ready    <none>   2d1h   v1.27.8-gke.1067004
+gke-myk8scluster-1-default-pool-ccb83c90-vwr3   Ready    <none>   2d1h   v1.27.8-gke.1067004
+
+C:\>cd .\kubernetes\
+The system cannot find the path specified.
+
+C:\>mkdir kubernetes
+
+C:\>ls
+'ls' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\>cd .\kubernetes\
+
+C:\kubernetes>mkdir workflow components
+
+C:\kubernetes>ls
+'ls' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\kubernetes>rmdir workflow components
+
+C:\kubernetes>mkdir workflow_components
+
+C:\kubernetes>cd .\workflow_components\
+
+C:\kubernetes\workflow_components>rmdir workflow_components
+The system cannot find the file specified.
+
+C:\kubernetes\workflow_components>cd
+C:\kubernetes\workflow_components
+
+C:\kubernetes\workflow_components>
+C:\kubernetes\workflow_components>cd \
+
+C:\>cd .\kubernetes\
+
+C:\kubernetes>cd .\Workload components\
+The system cannot find the path specified.
+
+C:\kubernetes>mkdir Workload components
+
+C:\kubernetes>cd .\Workload components\
+The system cannot find the path specified.
+
+C:\kubernetes>cd .\Workload components\
+The system cannot find the path specified.
+
+C:\kubernetes>cd .\workflow_components\
+
+C:\kubernetes\workflow_components>kubectl get pods
+No resources found in default namespace.
+
+C:\kubernetes\workflow_components>kubectl get services
+NAME         TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
+kubernetes   ClusterIP   10.104.0.1   <none>        443/TCP   2d1h
+
+C:\kubernetes\workflow_components>kubectl get deployment
+No resources found in default namespace.
+
+C:\kubernetes\workflow_components>kubectl get replicasets
+No resources found in default namespace.
+
+C:\kubernetes\workflow_components>code .
+'code' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\kubernetes\workflow_components>kubectl apply -f .\sample_pod.yml\
+error: the path ".\\sample_pod.yml\\" does not exist
+
+C:\kubernetes\workflow_components>kubectl apply -f .\sample_pod.yml\
+error: the path ".\\sample_pod.yml\\" cannot be accessed: CreateFile .\sample_pod.yml\: The filename, directory name, or volume label syntax is incorrect.
+
+C:\kubernetes\workflow_components>ls
+'ls' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\kubernetes\workflow_components>kubectl apply -f .\sample_pod.yml
+pod/my-pod created
+
+C:\kubernetes\workflow_components>kubectl get pods
+NAME     READY   STATUS    RESTARTS   AGE
+my-pod   1/1     Running   0          66s
+
+C:\kubernetes\workflow_components>kubectl get deploments
+error: the server doesn't have a resource type "deploments"
+
+C:\kubernetes\workflow_components>kubectl apply -f .\sample_deployment.yml
+error: the path ".\\sample_deployment.yml" does not exist
+
+C:\kubernetes\workflow_components>kubectl apply -f .\sample_deploy.yml
+deployment.apps/my-deployment created
+
+C:\kubernetes\workflow_components>kubectl describe pod
+Name:             my-deployment-c84f48dd5-b6cxj
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             gke-myk8scluster-1-default-pool-ccb83c90-vwr3/10.128.0.6
+Start Time:       Wed, 07 Feb 2024 10:53:14 +0530
+Labels:           app=my-app
+                  pod-template-hash=c84f48dd5
+Annotations:      <none>
+Status:           Running
+IP:               10.100.0.16
+IPs:
+  IP:           10.100.0.16
+Controlled By:  ReplicaSet/my-deployment-c84f48dd5
+Containers:
+  my-container:
+    Container ID:   containerd://ffd74e7d53deea7c9d51e23113d33cc6b6721f00570a28ee20c4cda6fe71d97f
+    Image:          nginx:latest
+    Image ID:       docker.io/library/nginx@sha256:84c52dfd55c467e12ef85cad6a252c0990564f03c4850799bf41dd738738691f
+    Port:           8080/TCP
+    Host Port:      0/TCP
+    State:          Running
+      Started:      Wed, 07 Feb 2024 10:53:15 +0530
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-95cbq (ro)
+Conditions:
+  Type              Status
+  Initialized       True
+  Ready             True
+  ContainersReady   True
+  PodScheduled      True
+Volumes:
+  kube-api-access-95cbq:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       <nil>
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type    Reason     Age   From               Message
+  ----    ------     ----  ----               -------
+  Normal  Scheduled  41s   default-scheduler  Successfully assigned default/my-deployment-c84f48dd5-b6cxj to gke-myk8scluster-1-default-pool-ccb83c90-vwr3
+  Normal  Pulling    40s   kubelet            Pulling image "nginx:latest"
+  Normal  Pulled     40s   kubelet            Successfully pulled image "nginx:latest" in 105.111796ms (105.138628ms including waiting)
+  Normal  Created    40s   kubelet            Created container my-container
+  Normal  Started    40s   kubelet            Started container my-container
+
+
+Name:             my-deployment-c84f48dd5-nzglm
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             gke-myk8scluster-1-default-pool-ccb83c90-g1dw/10.128.0.7
+Start Time:       Wed, 07 Feb 2024 10:53:14 +0530
+Labels:           app=my-app
+                  pod-template-hash=c84f48dd5
+Annotations:      <none>
+Status:           Running
+IP:               10.100.1.9
+IPs:
+  IP:           10.100.1.9
+Controlled By:  ReplicaSet/my-deployment-c84f48dd5
+Containers:
+  my-container:
+    Container ID:   containerd://97d817d4f0d36b4a39ae2646609fdd676dd322c110dc1af7f198f60c30b5fbd3
+    Image:          nginx:latest
+    Image ID:       docker.io/library/nginx@sha256:84c52dfd55c467e12ef85cad6a252c0990564f03c4850799bf41dd738738691f
+    Port:           8080/TCP
+    Host Port:      0/TCP
+    State:          Running
+      Started:      Wed, 07 Feb 2024 10:53:21 +0530
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-vjhch (ro)
+Conditions:
+  Type              Status
+  Initialized       True
+  Ready             True
+  ContainersReady   True
+  PodScheduled      True
+Volumes:
+  kube-api-access-vjhch:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       <nil>
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type    Reason     Age   From               Message
+  ----    ------     ----  ----               -------
+  Normal  Scheduled  42s   default-scheduler  Successfully assigned default/my-deployment-c84f48dd5-nzglm to gke-myk8scluster-1-default-pool-ccb83c90-g1dw
+  Normal  Pulling    41s   kubelet            Pulling image "nginx:latest"
+  Normal  Pulled     35s   kubelet            Successfully pulled image "nginx:latest" in 5.548978885s (5.549031749s including waiting)
+  Normal  Created    35s   kubelet            Created container my-container
+  Normal  Started    35s   kubelet            Started container my-container
+
+
+Name:             my-deployment-c84f48dd5-pxsjv
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             gke-myk8scluster-1-default-pool-ccb83c90-vwr3/10.128.0.6
+Start Time:       Wed, 07 Feb 2024 10:53:14 +0530
+Labels:           app=my-app
+                  pod-template-hash=c84f48dd5
+Annotations:      <none>
+Status:           Running
+IP:               10.100.0.15
+IPs:
+  IP:           10.100.0.15
+Controlled By:  ReplicaSet/my-deployment-c84f48dd5
+Containers:
+  my-container:
+    Container ID:   containerd://103ac2c25f591d1068f35258f534779b8c7885042c5e5b80c6e3001f73596609
+    Image:          nginx:latest
+    Image ID:       docker.io/library/nginx@sha256:84c52dfd55c467e12ef85cad6a252c0990564f03c4850799bf41dd738738691f
+    Port:           8080/TCP
+    Host Port:      0/TCP
+    State:          Running
+      Started:      Wed, 07 Feb 2024 10:53:15 +0530
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-hjrn4 (ro)
+Conditions:
+  Type              Status
+  Initialized       True
+  Ready             True
+  ContainersReady   True
+  PodScheduled      True
+Volumes:
+  kube-api-access-hjrn4:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       <nil>
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type    Reason     Age   From               Message
+  ----    ------     ----  ----               -------
+  Normal  Scheduled  43s   default-scheduler  Successfully assigned default/my-deployment-c84f48dd5-pxsjv to gke-myk8scluster-1-default-pool-ccb83c90-vwr3
+  Normal  Pulling    42s   kubelet            Pulling image "nginx:latest"
+  Normal  Pulled     42s   kubelet            Successfully pulled image "nginx:latest" in 113.155519ms (113.171225ms including waiting)
+  Normal  Created    42s   kubelet            Created container my-container
+  Normal  Started    42s   kubelet            Started container my-container
+
+
+Name:             my-deployment-c84f48dd5-q7xr2
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             gke-myk8scluster-1-default-pool-ccb83c90-g1dw/10.128.0.7
+Start Time:       Wed, 07 Feb 2024 10:53:14 +0530
+Labels:           app=my-app
+                  pod-template-hash=c84f48dd5
+Annotations:      <none>
+Status:           Running
+IP:               10.100.1.10
+IPs:
+  IP:           10.100.1.10
+Controlled By:  ReplicaSet/my-deployment-c84f48dd5
+Containers:
+  my-container:
+    Container ID:   containerd://76e17ef11472c895f091f211bd67e444c584e5771dc85fbb1ec69d6fd191ead3
+    Image:          nginx:latest
+    Image ID:       docker.io/library/nginx@sha256:84c52dfd55c467e12ef85cad6a252c0990564f03c4850799bf41dd738738691f
+    Port:           8080/TCP
+    Host Port:      0/TCP
+    State:          Running
+      Started:      Wed, 07 Feb 2024 10:53:21 +0530
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-zljns (ro)
+Conditions:
+  Type              Status
+  Initialized       True
+  Ready             True
+  ContainersReady   True
+  PodScheduled      True
+Volumes:
+  kube-api-access-zljns:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       <nil>
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type    Reason     Age   From               Message
+  ----    ------     ----  ----               -------
+  Normal  Scheduled  43s   default-scheduler  Successfully assigned default/my-deployment-c84f48dd5-q7xr2 to gke-myk8scluster-1-default-pool-ccb83c90-g1dw
+  Normal  Pulling    42s   kubelet            Pulling image "nginx:latest"
+  Normal  Pulled     36s   kubelet            Successfully pulled image "nginx:latest" in 5.562969052s (5.562981382s including waiting)
+  Normal  Created    36s   kubelet            Created container my-container
+  Normal  Started    36s   kubelet            Started container my-container
+
+
+Name:             my-pod
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             gke-myk8scluster-1-default-pool-ccb83c90-vwr3/10.128.0.6
+Start Time:       Wed, 07 Feb 2024 10:51:18 +0530
+Labels:           <none>
+Annotations:      <none>
+Status:           Running
+IP:               10.100.0.14
+IPs:
+  IP:  10.100.0.14
+Containers:
+  my-container:
+    Container ID:   containerd://914e0ede1ae04df92a39b2761bfc2926ffe11556a24e6df32804459a163ea650
+    Image:          nginx:latest
+    Image ID:       docker.io/library/nginx@sha256:84c52dfd55c467e12ef85cad6a252c0990564f03c4850799bf41dd738738691f
+    Port:           8080/TCP
+    Host Port:      0/TCP
+    State:          Running
+      Started:      Wed, 07 Feb 2024 10:51:24 +0530
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-hmld8 (ro)
+Conditions:
+  Type              Status
+  Initialized       True
+  Ready             True
+  ContainersReady   True
+  PodScheduled      True
+Volumes:
+  kube-api-access-hmld8:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       <nil>
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type    Reason     Age    From               Message
+  ----    ------     ----   ----               -------
+  Normal  Scheduled  2m40s  default-scheduler  Successfully assigned default/my-pod to gke-myk8scluster-1-default-pool-ccb83c90-vwr3
+  Normal  Pulling    2m39s  kubelet            Pulling image "nginx:latest"
+  Normal  Pulled     2m34s  kubelet            Successfully pulled image "nginx:latest" in 5.184700963s (5.184737813s including waiting)
+  Normal  Created    2m34s  kubelet            Created container my-container
+  Normal  Started    2m34s  kubelet            Started container my-container
+
+C:\kubernetes\workflow_components>kubectl get nodes
+NAME                                            STATUS   ROLES    AGE    VERSION
+gke-myk8scluster-1-default-pool-ccb83c90-g1dw   Ready    <none>   2d2h   v1.27.8-gke.1067004
+gke-myk8scluster-1-default-pool-ccb83c90-vwr3   Ready    <none>   2d2h   v1.27.8-gke.1067004
+
+C:\kubernetes\workflow_components>kubectl apply -f .\sample_deployment.yml
+error: the path ".\\sample_deployment.yml" does not exist
+
+C:\kubernetes\workflow_components>kubectl apply -f .\sample_deploy.yml
+deployment.apps/my-deployment unchanged
+
+C:\kubernetes\workflow_components>kubectl get nodes
+NAME                                            STATUS   ROLES    AGE    VERSION
+gke-myk8scluster-1-default-pool-ccb83c90-g1dw   Ready    <none>   2d2h   v1.27.8-gke.1067004
+gke-myk8scluster-1-default-pool-ccb83c90-vwr3   Ready    <none>   2d2h   v1.27.8-gke.1067004
+
+C:\kubernetes\workflow_components>kubectl get pods
+NAME                            READY   STATUS    RESTARTS   AGE
+my-deployment-c84f48dd5-b6cxj   1/1     Running   0          6m12s
+my-deployment-c84f48dd5-nzglm   1/1     Running   0          6m12s
+my-deployment-c84f48dd5-pxsjv   1/1     Running   0          6m12s
+my-deployment-c84f48dd5-q7xr2   1/1     Running   0          6m12s
+my-pod                          1/1     Running   0          8m10s
+
+C:\kubernetes\workflow_components>kubectl get deploymwents
+error: the server doesn't have a resource type "deploymwents"
+
+C:\kubernetes\workflow_components>kubectl get deployment
+NAME            READY   UP-TO-DATE   AVAILABLE   AGE
+my-deployment   4/4     4            4           6m51s
+
+C:\kubernetes\workflow_components>kubectl get deployments
+NAME            READY   UP-TO-DATE   AVAILABLE   AGE
+my-deployment   4/4     4            4           6m59s
+
+C:\kubernetes\workflow_components>kubectl get replicasets
+NAME                      DESIRED   CURRENT   READY   AGE
+my-deployment-c84f48dd5   4         4         4       7m9s
+
+C:\kubernetes\workflow_components>kubectl describe deployment my-deployment
+Name:                   my-deployment
+Namespace:              default
+CreationTimestamp:      Wed, 07 Feb 2024 10:53:14 +0530
+Labels:                 <none>
+Annotations:            deployment.kubernetes.io/revision: 1
+Selector:               app=my-app
+Replicas:               4 desired | 4 updated | 4 total | 4 available | 0 unavailable
+StrategyType:           RollingUpdate
+MinReadySeconds:        0
+RollingUpdateStrategy:  25% max unavailable, 25% max surge
+Pod Template:
+  Labels:  app=my-app
+  Containers:
+   my-container:
+    Image:        nginx:latest
+    Port:         8080/TCP
+    Host Port:    0/TCP
+    Environment:  <none>
+    Mounts:       <none>
+  Volumes:        <none>
+Conditions:
+  Type           Status  Reason
+  ----           ------  ------
+  Available      True    MinimumReplicasAvailable
+  Progressing    True    NewReplicaSetAvailable
+OldReplicaSets:  <none>
+NewReplicaSet:   my-deployment-c84f48dd5 (4/4 replicas created)
+Events:
+  Type    Reason             Age    From                   Message
+  ----    ------             ----   ----                   -------
+  Normal  ScalingReplicaSet  8m49s  deployment-controller  Scaled up replica set my-deployment-c84f48dd5 to 4
+
+C:\kubernetes\workflow_components>kubectl describe replicaset my-deployment-c84f48dd5
+Name:           my-deployment-c84f48dd5
+Namespace:      default
+Selector:       app=my-app,pod-template-hash=c84f48dd5
+Labels:         app=my-app
+                pod-template-hash=c84f48dd5
+Annotations:    deployment.kubernetes.io/desired-replicas: 4
+                deployment.kubernetes.io/max-replicas: 5
+                deployment.kubernetes.io/revision: 1
+Controlled By:  Deployment/my-deployment
+Replicas:       4 current / 4 desired
+Pods Status:    4 Running / 0 Waiting / 0 Succeeded / 0 Failed
+Pod Template:
+  Labels:  app=my-app
+           pod-template-hash=c84f48dd5
+  Containers:
+   my-container:
+    Image:        nginx:latest
+    Port:         8080/TCP
+    Host Port:    0/TCP
+    Environment:  <none>
+    Mounts:       <none>
+  Volumes:        <none>
+Events:
+  Type    Reason            Age   From                   Message
+  ----    ------            ----  ----                   -------
+  Normal  SuccessfulCreate  10m   replicaset-controller  Created pod: my-deployment-c84f48dd5-pxsjv
+  Normal  SuccessfulCreate  10m   replicaset-controller  Created pod: my-deployment-c84f48dd5-q7xr2
+  Normal  SuccessfulCreate  10m   replicaset-controller  Created pod: my-deployment-c84f48dd5-b6cxj
+  Normal  SuccessfulCreate  10m   replicaset-controller  Created pod: my-deployment-c84f48dd5-nzglm
+
+C:\kubernetes\workflow_components>kubectl apply -f .\sample_rs.yml
+replicaset.apps/my-replicaset created
+
+C:\kubernetes\workflow_components>kubectl get replicasets
+NAME                      DESIRED   CURRENT   READY   AGE
+my-deployment-c84f48dd5   4         4         4       12m
+my-replicaset             3         3         3       6s
+
+C:\kubernetes\workflow_components>kubectl describe replicaset my-replicaset
+Name:         my-replicaset
+Namespace:    default
+Selector:     app=my-app
+Labels:       <none>
+Annotations:  <none>
+Replicas:     3 current / 3 desired
+Pods Status:  3 Running / 0 Waiting / 0 Succeeded / 0 Failed
+Pod Template:
+  Labels:  app=my-app
+  Containers:
+   my-container:
+    Image:        nginx:latest
+    Port:         8080/TCP
+    Host Port:    0/TCP
+    Environment:  <none>
+    Mounts:       <none>
+  Volumes:        <none>
+Events:
+  Type    Reason            Age   From                   Message
+  ----    ------            ----  ----                   -------
+  Normal  SuccessfulCreate  68s   replicaset-controller  Created pod: my-replicaset-mqjf7
+  Normal  SuccessfulCreate  68s   replicaset-controller  Created pod: my-replicaset-x5f67
+  Normal  SuccessfulCreate  68s   replicaset-controller  Created pod: my-replicaset-99bq9
+
+C:\kubernetes\workflow_components>kubectl edit deployment my-deployment
+deployment.apps/my-deployment edited
+
+C:\kubernetes\workflow_components>kubectl get deployment
+NAME            READY   UP-TO-DATE   AVAILABLE   AGE
+my-deployment   2/2     2            2           16m
+
+C:\kubernetes\workflow_components>kubectl edit deployment my-deployment
+deployment.apps/my-deployment edited
+
+C:\kubernetes\workflow_components>kubectl get deployment
+NAME            READY   UP-TO-DATE   AVAILABLE   AGE
+my-deployment   4/4     4            4           17m
+
+C:\kubernetes\workflow_components>kubectl get pods
+NAME                            READY   STATUS    RESTARTS   AGE
+my-deployment-c84f48dd5-b6cxj   1/1     Running   0          18m
+my-deployment-c84f48dd5-pxsjv   1/1     Running   0          18m
+my-deployment-c84f48dd5-slfhn   1/1     Running   0          36s
+my-deployment-c84f48dd5-w5rkg   1/1     Running   0          36s
+my-pod                          1/1     Running   0          20m
+my-replicaset-99bq9             1/1     Running   0          5m33s
+my-replicaset-mqjf7             1/1     Running   0          5m33s
+my-replicaset-x5f67             1/1     Running   0          5m33s
+
+C:\kubernetes\workflow_components>kubectl delete pods my-deployment-c84f48dd5-w5rkg
+pod "my-deployment-c84f48dd5-w5rkg" deleted
+
+C:\kubernetes\workflow_components>kubectl get pods
+NAME                            READY   STATUS    RESTARTS   AGE
+my-deployment-c84f48dd5-b6cxj   1/1     Running   0          20m
+my-deployment-c84f48dd5-bhjch   1/1     Running   0          6s
+my-deployment-c84f48dd5-pxsjv   1/1     Running   0          20m
+my-deployment-c84f48dd5-slfhn   1/1     Running   0          3m13s
+my-pod                          1/1     Running   0          22m
+my-replicaset-99bq9             1/1     Running   0          8m10s
+my-replicaset-mqjf7             1/1     Running   0          8m10s
+my-replicaset-x5f67             1/1     Running   0          8m10s
+
+C:\kubernetes\workflow_components>kubectl get pods -o wide
+NAME                            READY   STATUS    RESTARTS   AGE   IP            NODE                                            NOMINATED NODE   READINESS GATES
+my-deployment-c84f48dd5-b6cxj   1/1     Running   0          32m   10.100.0.16   gke-myk8scluster-1-default-pool-ccb83c90-vwr3   <none>           <none>
+my-deployment-c84f48dd5-bhjch   1/1     Running   0          11m   10.100.1.14   gke-myk8scluster-1-default-pool-ccb83c90-g1dw   <none>           <none>
+my-deployment-c84f48dd5-pxsjv   1/1     Running   0          32m   10.100.0.15   gke-myk8scluster-1-default-pool-ccb83c90-vwr3   <none>           <none>
+my-deployment-c84f48dd5-slfhn   1/1     Running   0          15m   10.100.1.13   gke-myk8scluster-1-default-pool-ccb83c90-g1dw   <none>           <none>
+my-pod                          1/1     Running   0          34m   10.100.0.14   gke-myk8scluster-1-default-pool-ccb83c90-vwr3   <none>           <none>
+my-replicaset-99bq9             1/1     Running   0          20m   10.100.0.18   gke-myk8scluster-1-default-pool-ccb83c90-vwr3   <none>           <none>
+my-replicaset-mqjf7             1/1     Running   0          20m   10.100.0.17   gke-myk8scluster-1-default-pool-ccb83c90-vwr3   <none>           <none>
+my-replicaset-x5f67             1/1     Running   0          20m   10.100.1.11   gke-myk8scluster-1-default-pool-ccb83c90-g1dw   <none>           <none>
+
+C:\kubernetes\workflow_components>kubectl delete pods my-pod
+pod "my-pod" deleted
+
+C:\kubernetes\workflow_components>kubectl get pods -o wide
+NAME                            READY   STATUS    RESTARTS   AGE   IP            NODE                                            NOMINATED NODE   READINESS GATES
+my-deployment-c84f48dd5-b6cxj   1/1     Running   0          33m   10.100.0.16   gke-myk8scluster-1-default-pool-ccb83c90-vwr3   <none>           <none>
+my-deployment-c84f48dd5-bhjch   1/1     Running   0          12m   10.100.1.14   gke-myk8scluster-1-default-pool-ccb83c90-g1dw   <none>           <none>
+my-deployment-c84f48dd5-pxsjv   1/1     Running   0          33m   10.100.0.15   gke-myk8scluster-1-default-pool-ccb83c90-vwr3   <none>           <none>
+my-deployment-c84f48dd5-slfhn   1/1     Running   0          15m   10.100.1.13   gke-myk8scluster-1-default-pool-ccb83c90-g1dw   <none>           <none>
+my-replicaset-99bq9             1/1     Running   0          20m   10.100.0.18   gke-myk8scluster-1-default-pool-ccb83c90-vwr3   <none>           <none>
+my-replicaset-mqjf7             1/1     Running   0          20m   10.100.0.17   gke-myk8scluster-1-default-pool-ccb83c90-vwr3   <none>           <none>
+my-replicaset-x5f67             1/1     Running   0          20m   10.100.1.11   gke-myk8scluster-1-default-pool-ccb83c90-g1dw   <none>           <none>
+
+C:\kubernetes\workflow_components>kubectl apply -f .\sample_pod.yml
+pod/my-pod created
+
+C:\kubernetes\workflow_components>kubectl get pods -o wide
+NAME                            READY   STATUS    RESTARTS   AGE   IP            NODE                                            NOMINATED NODE   READINESS GATES
+my-deployment-c84f48dd5-b6cxj   1/1     Running   0          33m   10.100.0.16   gke-myk8scluster-1-default-pool-ccb83c90-vwr3   <none>           <none>
+my-deployment-c84f48dd5-bhjch   1/1     Running   0          13m   10.100.1.14   gke-myk8scluster-1-default-pool-ccb83c90-g1dw   <none>           <none>
+my-deployment-c84f48dd5-pxsjv   1/1     Running   0          33m   10.100.0.15   gke-myk8scluster-1-default-pool-ccb83c90-vwr3   <none>           <none>
+my-deployment-c84f48dd5-slfhn   1/1     Running   0          16m   10.100.1.13   gke-myk8scluster-1-default-pool-ccb83c90-g1dw   <none>           <none>
+my-pod                          1/1     Running   0          5s    10.100.0.19   gke-myk8scluster-1-default-pool-ccb83c90-vwr3   <none>           <none>
+my-replicaset-99bq9             1/1     Running   0          21m   10.100.0.18   gke-myk8scluster-1-default-pool-ccb83c90-vwr3   <none>           <none>
+my-replicaset-mqjf7             1/1     Running   0          21m   10.100.0.17   gke-myk8scluster-1-default-pool-ccb83c90-vwr3   <none>           <none>
+my-replicaset-x5f67             1/1     Running   0          21m   10.100.1.11   gke-myk8scluster-1-default-pool-ccb83c90-g1dw   <none>           <none>
+
+C:\kubernetes\workflow_components>kubectl get all
+NAME                                READY   STATUS    RESTARTS   AGE
+pod/my-deployment-c84f48dd5-b6cxj   1/1     Running   0          43m
+pod/my-deployment-c84f48dd5-bhjch   1/1     Running   0          22m
+pod/my-deployment-c84f48dd5-pxsjv   1/1     Running   0          43m
+pod/my-deployment-c84f48dd5-slfhn   1/1     Running   0          25m
+pod/my-pod                          1/1     Running   0          9m44s
+pod/my-replicaset-99bq9             1/1     Running   0          30m
+pod/my-replicaset-mqjf7             1/1     Running   0          30m
+pod/my-replicaset-x5f67             1/1     Running   0          30m
+
+NAME                 TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
+service/kubernetes   ClusterIP   10.104.0.1   <none>        443/TCP   2d2h
+
+NAME                            READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/my-deployment   4/4     4            4           43m
+
+NAME                                      DESIRED   CURRENT   READY   AGE
+replicaset.apps/my-deployment-c84f48dd5   4         4         4       43m
+replicaset.apps/my-replicaset             3         3         3       30m
+
+C:\kubernetes\workflow_components>kubectl get nodes
+NAME                                            STATUS   ROLES    AGE    VERSION
+gke-myk8scluster-1-default-pool-ccb83c90-g1dw   Ready    <none>   2d2h   v1.27.8-gke.1067004
+gke-myk8scluster-1-default-pool-ccb83c90-vwr3   Ready    <none>   2d2h   v1.27.8-gke.1067004
+
+C:\kubernetes\workflow_components>kubectl get svc
+NAME         TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
+kubernetes   ClusterIP   10.104.0.1   <none>        443/TCP   2d2h
+
+C:\kubernetes\workflow_components>mkdir services
+
+C:\kubernetes\workflow_components>list
+'list' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\kubernetes\workflow_components>ls
+'ls' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\kubernetes\workflow_components>cd .\services\
+
+C:\kubernetes\workflow_components\services>kubectl apply -f.\dep_cip.yml
+deployment.apps/my-deployment-cip created
+service/my-app-cip created
+
+C:\kubernetes\workflow_components\services>kubectl get svc
+NAME         TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)   AGE
+kubernetes   ClusterIP   10.104.0.1     <none>        443/TCP   2d3h
+my-app-cip   ClusterIP   10.104.9.199   <none>        80/TCP    8s
+
+C:\kubernetes\workflow_components\services>kubectl get deploy
+NAME                READY   UP-TO-DATE   AVAILABLE   AGE
+my-deployment       4/4     4            4           64m
+my-deployment-cip   3/3     3            3           32s
+
+C:\kubernetes\workflow_components\services>kubectl get pod
+NAME                               READY   STATUS    RESTARTS   AGE
+my-deployment-c84f48dd5-b6cxj      1/1     Running   0          64m
+my-deployment-c84f48dd5-bhjch      1/1     Running   0          43m
+my-deployment-c84f48dd5-pxsjv      1/1     Running   0          64m
+my-deployment-c84f48dd5-slfhn      1/1     Running   0          46m
+my-deployment-cip-87b9d7fd-2vhn2   1/1     Running   0          43s
+my-deployment-cip-87b9d7fd-7hvfp   1/1     Running   0          43s
+my-deployment-cip-87b9d7fd-nwhlg   1/1     Running   0          43s
+my-pod                             1/1     Running   0          30m
+my-replicaset-99bq9                1/1     Running   0          51m
+my-replicaset-mqjf7                1/1     Running   0          51m
+my-replicaset-x5f67                1/1     Running   0          51m
+
+C:\kubernetes\workflow_components\services>kubectl get pod -o wide
+NAME                               READY   STATUS    RESTARTS   AGE     IP            NODE                                            NOMINATED NODE   READINESS GATES
+my-deployment-c84f48dd5-b6cxj      1/1     Running   0          65m     10.100.0.16   gke-myk8scluster-1-default-pool-ccb83c90-vwr3   <none>           <none>
+my-deployment-c84f48dd5-bhjch      1/1     Running   0          45m     10.100.1.14   gke-myk8scluster-1-default-pool-ccb83c90-g1dw   <none>           <none>
+my-deployment-c84f48dd5-pxsjv      1/1     Running   0          65m     10.100.0.15   gke-myk8scluster-1-default-pool-ccb83c90-vwr3   <none>           <none>
+my-deployment-c84f48dd5-slfhn      1/1     Running   0          48m     10.100.1.13   gke-myk8scluster-1-default-pool-ccb83c90-g1dw   <none>           <none>
+my-deployment-cip-87b9d7fd-2vhn2   1/1     Running   0          2m15s   10.100.0.21   gke-myk8scluster-1-default-pool-ccb83c90-vwr3   <none>           <none>
+my-deployment-cip-87b9d7fd-7hvfp   1/1     Running   0          2m15s   10.100.0.20   gke-myk8scluster-1-default-pool-ccb83c90-vwr3   <none>           <none>
+my-deployment-cip-87b9d7fd-nwhlg   1/1     Running   0          2m15s   10.100.1.15   gke-myk8scluster-1-default-pool-ccb83c90-g1dw   <none>           <none>
+my-pod                             1/1     Running   0          32m     10.100.0.19   gke-myk8scluster-1-default-pool-ccb83c90-vwr3   <none>           <none>
+my-replicaset-99bq9                1/1     Running   0          53m     10.100.0.18   gke-myk8scluster-1-default-pool-ccb83c90-vwr3   <none>           <none>
+my-replicaset-mqjf7                1/1     Running   0          53m     10.100.0.17   gke-myk8scluster-1-default-pool-ccb83c90-vwr3   <none>           <none>
+my-replicaset-x5f67                1/1     Running   0          53m     10.100.1.11   gke-myk8scluster-1-default-pool-ccb83c90-g1dw   <none>           <none>
+
+C:\kubernetes\workflow_components\services>kubectl get svc
+NAME         TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)   AGE
+kubernetes   ClusterIP   10.104.0.1     <none>        443/TCP   2d3h
+my-app-cip   ClusterIP   10.104.9.199   <none>        80/TCP    2m52s
+
+C:\kubernetes\workflow_components\services>kubectl describe svc my-app-cpi
+Error from server (NotFound): services "my-app-cpi" not found
+
+C:\kubernetes\workflow_components\services>kubectl describe svc my-app-cip
+Name:              my-app-cip
+Namespace:         default
+Labels:            app=my-app-cip
+Annotations:       cloud.google.com/neg: {"ingress":true}
+Selector:          app=my-app-cip
+Type:              ClusterIP
+IP Family Policy:  SingleStack
+IP Families:       IPv4
+IP:                10.104.9.199
+IPs:               10.104.9.199
+Port:              <unset>  80/TCP
+TargetPort:        80/TCP
+Endpoints:         10.100.0.20:80,10.100.0.21:80,10.100.1.15:80
+Session Affinity:  None
+Events:            <none>
+
+C:\kubernetes\workflow_components\services>kubectl describe svc kubernetes
+Name:              kubernetes
+Namespace:         default
+Labels:            component=apiserver
+                   provider=kubernetes
+Annotations:       <none>
+Selector:          <none>
+Type:              ClusterIP
+IP Family Policy:  SingleStack
+IP Families:       IPv4
+IP:                10.104.0.1
+IPs:               10.104.0.1
+Port:              https  443/TCP
+TargetPort:        443/TCP
+Endpoints:         10.128.0.5:443
+Session Affinity:  None
+Events:            <none>
+
+C:\kubernetes\workflow_components\services>kubectl get nodes
+NAME                                            STATUS   ROLES    AGE    VERSION
+gke-myk8scluster-1-default-pool-ccb83c90-g1dw   Ready    <none>   2d3h   v1.27.8-gke.1067004
+gke-myk8scluster-1-default-pool-ccb83c90-vwr3   Ready    <none>   2d3h   v1.27.8-gke.1067004
+
+C:\kubernetes\workflow_components\services>kubectl get nodes -o wide
+NAME                                            STATUS   ROLES    AGE    VERSION               INTERNAL-IP   EXTERNAL-IP       OS-IMAGE                             KERNEL-VERSION   CONTAINER-RUNTIME
+gke-myk8scluster-1-default-pool-ccb83c90-g1dw   Ready    <none>   2d3h   v1.27.8-gke.1067004   10.128.0.7    104.154.216.202   Container-Optimized OS from Google   5.15.133+        containerd://1.7.10
+gke-myk8scluster-1-default-pool-ccb83c90-vwr3   Ready    <none>   2d3h   v1.27.8-gke.1067004   10.128.0.6    34.122.156.116    Container-Optimized OS from Google   5.15.133+        containerd://1.7.10
+
+C:\kubernetes\workflow_components\services>kubectl apply -f.\dep_np.yml
+deployment.apps/my-deployment-np created
+service/my-app-np created
+
+C:\kubernetes\workflow_components\services>kubectl get nodes
+NAME                                            STATUS   ROLES    AGE    VERSION
+gke-myk8scluster-1-default-pool-ccb83c90-g1dw   Ready    <none>   2d3h   v1.27.8-gke.1067004
+gke-myk8scluster-1-default-pool-ccb83c90-vwr3   Ready    <none>   2d3h   v1.27.8-gke.1067004
+
+C:\kubernetes\workflow_components\services>kubectl get pods
+NAME                                READY   STATUS    RESTARTS   AGE
+my-deployment-c84f48dd5-b6cxj       1/1     Running   0          73m
+my-deployment-c84f48dd5-bhjch       1/1     Running   0          53m
+my-deployment-c84f48dd5-pxsjv       1/1     Running   0          73m
+my-deployment-c84f48dd5-slfhn       1/1     Running   0          56m
+my-deployment-cip-87b9d7fd-2vhn2    1/1     Running   0          10m
+my-deployment-cip-87b9d7fd-7hvfp    1/1     Running   0          10m
+my-deployment-cip-87b9d7fd-nwhlg    1/1     Running   0          10m
+my-deployment-np-864644fcf4-856cp   1/1     Running   0          16s
+my-deployment-np-864644fcf4-9rbxp   1/1     Running   0          16s
+my-deployment-np-864644fcf4-sv6st   1/1     Running   0          16s
+my-pod                              1/1     Running   0          40m
+my-replicaset-99bq9                 1/1     Running   0          61m
+my-replicaset-mqjf7                 1/1     Running   0          61m
+my-replicaset-x5f67                 1/1     Running   0          61m
+
+C:\kubernetes\workflow_components\services>kubectl get pods -o wide
+NAME                                READY   STATUS    RESTARTS   AGE   IP            NODE                                            NOMINATED NODE   READINESS GATES
+my-deployment-c84f48dd5-b6cxj       1/1     Running   0          74m   10.100.0.16   gke-myk8scluster-1-default-pool-ccb83c90-vwr3   <none>           <none>
+my-deployment-c84f48dd5-bhjch       1/1     Running   0          53m   10.100.1.14   gke-myk8scluster-1-default-pool-ccb83c90-g1dw   <none>           <none>
+my-deployment-c84f48dd5-pxsjv       1/1     Running   0          74m   10.100.0.15   gke-myk8scluster-1-default-pool-ccb83c90-vwr3   <none>           <none>
+my-deployment-c84f48dd5-slfhn       1/1     Running   0          57m   10.100.1.13   gke-myk8scluster-1-default-pool-ccb83c90-g1dw   <none>           <none>
+my-deployment-cip-87b9d7fd-2vhn2    1/1     Running   0          10m   10.100.0.21   gke-myk8scluster-1-default-pool-ccb83c90-vwr3   <none>           <none>
+my-deployment-cip-87b9d7fd-7hvfp    1/1     Running   0          10m   10.100.0.20   gke-myk8scluster-1-default-pool-ccb83c90-vwr3   <none>           <none>
+my-deployment-cip-87b9d7fd-nwhlg    1/1     Running   0          10m   10.100.1.15   gke-myk8scluster-1-default-pool-ccb83c90-g1dw   <none>           <none>
+my-deployment-np-864644fcf4-856cp   1/1     Running   0          52s   10.100.0.22   gke-myk8scluster-1-default-pool-ccb83c90-vwr3   <none>           <none>
+my-deployment-np-864644fcf4-9rbxp   1/1     Running   0          52s   10.100.0.23   gke-myk8scluster-1-default-pool-ccb83c90-vwr3   <none>           <none>
+my-deployment-np-864644fcf4-sv6st   1/1     Running   0          52s   10.100.1.16   gke-myk8scluster-1-default-pool-ccb83c90-g1dw   <none>           <none>
+my-pod                              1/1     Running   0          40m   10.100.0.19   gke-myk8scluster-1-default-pool-ccb83c90-vwr3   <none>           <none>
+my-replicaset-99bq9                 1/1     Running   0          62m   10.100.0.18   gke-myk8scluster-1-default-pool-ccb83c90-vwr3   <none>           <none>
+my-replicaset-mqjf7                 1/1     Running   0          62m   10.100.0.17   gke-myk8scluster-1-default-pool-ccb83c90-vwr3   <none>           <none>
+my-replicaset-x5f67                 1/1     Running   0          62m   10.100.1.11   gke-myk8scluster-1-default-pool-ccb83c90-g1dw   <none>           <none>
+
+C:\kubernetes\workflow_components\services>kubectl get svc
+NAME         TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)        AGE
+kubernetes   ClusterIP   10.104.0.1     <none>        443/TCP        2d3h
+my-app-cip   ClusterIP   10.104.9.199   <none>        80/TCP         11m
+my-app-np    NodePort    10.104.11.84   <none>        80:31377/TCP   82s
+
+C:\kubernetes\workflow_components\services>kubectl get nodes -o wide
+NAME                                            STATUS   ROLES    AGE    VERSION               INTERNAL-IP   EXTERNAL-IP       OS-IMAGE                             KERNEL-VERSION   CONTAINER-RUNTIME
+gke-myk8scluster-1-default-pool-ccb83c90-g1dw   Ready    <none>   2d3h   v1.27.8-gke.1067004   10.128.0.7    104.154.216.202   Container-Optimized OS from Google   5.15.133+        containerd://1.7.10
+gke-myk8scluster-1-default-pool-ccb83c90-vwr3   Ready    <none>   2d3h   v1.27.8-gke.1067004   10.128.0.6    34.122.156.116    Container-Optimized OS from Google   5.15.133+        containerd://1.7.10
+
+C:\kubernetes\workflow_components\services>kubectl apply -f.\dep_lb.yml
+deployment.apps/my-deployment-lb created
+service/my-app-lb created
+
+C:\kubernetes\workflow_components\services>kubectl get svc
+NAME         TYPE           CLUSTER-IP     EXTERNAL-IP   PORT(S)        AGE
+kubernetes   ClusterIP      10.104.0.1     <none>        443/TCP        2d3h
+my-app-cip   ClusterIP      10.104.9.199   <none>        80/TCP         17m
+my-app-lb    LoadBalancer   10.104.4.237   <pending>     80:31345/TCP   7s
+my-app-np    NodePort       10.104.11.84   <none>        80:31377/TCP   7m16s
+
+C:\kubernetes\workflow_components\services>kubectl get nodes -o wide
+NAME                                            STATUS   ROLES    AGE    VERSION               INTERNAL-IP   EXTERNAL-IP       OS-IMAGE                             KERNEL-VERSION   CONTAINER-RUNTIME
+gke-myk8scluster-1-default-pool-ccb83c90-g1dw   Ready    <none>   2d3h   v1.27.8-gke.1067004   10.128.0.7    104.154.216.202   Container-Optimized OS from Google   5.15.133+        containerd://1.7.10
+gke-myk8scluster-1-default-pool-ccb83c90-vwr3   Ready    <none>   2d3h   v1.27.8-gke.1067004   10.128.0.6    34.122.156.116    Container-Optimized OS from Google   5.15.133+        containerd://1.7.10
+
+C:\kubernetes\workflow_components\services>kubectl get svc
+NAME         TYPE           CLUSTER-IP     EXTERNAL-IP     PORT(S)        AGE
+kubernetes   ClusterIP      10.104.0.1     <none>          443/TCP        2d3h
+my-app-cip   ClusterIP      10.104.9.199   <none>          80/TCP         23m
+my-app-lb    LoadBalancer   10.104.4.237   35.225.65.253   80:31345/TCP   6m13s
+my-app-np    NodePort       10.104.11.84   <none>          80:31377/TCP   13m
+
+C:\kubernetes\workflow_components\services>kubectl get nodes -o wide
+NAME                                            STATUS   ROLES    AGE    VERSION               INTERNAL-IP   EXTERNAL-IP       OS-IMAGE                             KERNEL-VERSION   CONTAINER-RUNTIME
+gke-myk8scluster-1-default-pool-ccb83c90-g1dw   Ready    <none>   2d3h   v1.27.8-gke.1067004   10.128.0.7    104.154.216.202   Container-Optimized OS from Google   5.15.133+        containerd://1.7.10
+gke-myk8scluster-1-default-pool-ccb83c90-vwr3   Ready    <none>   2d3h   v1.27.8-gke.1067004   10.128.0.6    34.122.156.116    Container-Optimized OS from Google   5.15.133+        containerd://1.7.10
+
+C:\kubernetes\workflow_components\services>kubectl get deploy
+NAME                READY   UP-TO-DATE   AVAILABLE   AGE
+my-deployment       4/4     4            4           91m
+my-deployment-cip   3/3     3            3           28m
+my-deployment-lb    3/3     3            3           10m
+my-deployment-np    3/3     3            3           17m
+
+C:\kubernetes\workflow_components\services>kubectl get pods
+NAME                                READY   STATUS    RESTARTS   AGE
+my-deployment-c84f48dd5-b6cxj       1/1     Running   0          91m
+my-deployment-c84f48dd5-bhjch       1/1     Running   0          71m
+my-deployment-c84f48dd5-pxsjv       1/1     Running   0          91m
+my-deployment-c84f48dd5-slfhn       1/1     Running   0          74m
+my-deployment-cip-87b9d7fd-2vhn2    1/1     Running   0          28m
+my-deployment-cip-87b9d7fd-7hvfp    1/1     Running   0          28m
+my-deployment-cip-87b9d7fd-nwhlg    1/1     Running   0          28m
+my-deployment-lb-6dd959d4db-5h645   1/1     Running   0          11m
+my-deployment-lb-6dd959d4db-bxs4b   1/1     Running   0          11m
+my-deployment-lb-6dd959d4db-mzptl   1/1     Running   0          11m
+my-deployment-np-864644fcf4-856cp   1/1     Running   0          18m
+my-deployment-np-864644fcf4-9rbxp   1/1     Running   0          18m
+my-deployment-np-864644fcf4-sv6st   1/1     Running   0          18m
+my-pod                              1/1     Running   0          58m
+my-replicaset-99bq9                 1/1     Running   0          79m
+my-replicaset-mqjf7                 1/1     Running   0          79m
+my-replicaset-x5f67                 1/1     Running   0          79m
+
+C:\kubernetes\workflow_components\services>kubectl get svc -w
+NAME         TYPE           CLUSTER-IP     EXTERNAL-IP     PORT(S)        AGE
+kubernetes   ClusterIP      10.104.0.1     <none>          443/TCP        2d3h
+my-app-cip   ClusterIP      10.104.9.199   <none>          80/TCP         29m
+my-app-lb    LoadBalancer   10.104.4.237   35.225.65.253   80:31345/TCP   11m
+my-app-np    NodePort       10.104.11.84   <none>          80:31377/TCP   18m
